@@ -41,14 +41,24 @@ namespace TidyUpFilelogs
         {
             var filenames = fileScanner.GetFilesFiltered(workingFolder);
 
-            filenames.ToList().ForEach(Console.WriteLine);
+            filenames.ToList().ForEach(WorkWithFile);
+        }
+
+        private static void WorkWithFile(string fileName)
+        {
+            Console.WriteLine($"found file for deleting: '{fileName}'");
+            File.Delete(fileName);
+            Console.WriteLine($"deleted: '{fileName}'");
         }
 
         private static UnityContainer CreateUnityContainer()
         {
             var unityContainer = new UnityContainer();
+            
             unityContainer.RegisterType<IFileScanner, FileScanner>();
             unityContainer.RegisterType<IFileInfoProvider, FileInfoProvider>();
+            unityContainer.RegisterType<IFileScannerFilter, FiveDaysOldFileScannerFilter>();
+            
             return unityContainer;
         }
 

@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileScanning\AllFilesFileScannerFilter.cs" />
     <Compile Include="FileScanning\FileInfoProvider.cs" />
     <Compile Include="FileScanning\FileInformation.cs" />
     <Compile Include="FileScanning\FileScanner.cs" />
