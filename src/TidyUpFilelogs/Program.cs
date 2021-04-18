@@ -23,7 +23,7 @@ namespace TidyUpFilelogs
 
             if (Debugger.IsAttached)
             {
-                Console.WriteLine("Fertig - Beenden mit Tastendruck.");
+                Console.WriteLine("Fertig - Beenden mit Tastendruck!");
                 Console.ReadLine();
             }
         }
